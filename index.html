@@ -1,139 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>D&D Data Dynamics</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>D&D Data Dynamics — Data Engineering, Analytics & AI</title>
+  <meta name="description" content="D&D Data Dynamics — end-to-end data engineering, cloud analytics, and AI-driven insights to boost business performance." />
+  <link rel="canonical" href="https://www.dnddatadynamics.com/" />
 
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background:#eef2f3;}
-    header { background: linear-gradient(135deg,#0d47a1,#1565c0); color:#fff; padding:40px; text-align:center; }
-    nav { background:#0d47a1; padding:12px; display:flex; gap:25px; justify-content:center; }
-    nav a { color:#fff; text-decoration:none; font-weight:bold; }
-    nav a:hover { text-decoration:underline; }
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="D&D Data Dynamics — Data Engineering, Analytics & AI" />
+  <meta property="og:description" content="End-to-end data engineering, cloud analytics, and AI-driven insights to boost business performance." />
+  <meta property="og:url" content="https://www.dnddatadynamics.com/" />
+  <meta property="og:site_name" content="D&D Data Dynamics" />
+  <meta property="og:image" content="/assets/og-image.png" />
 
-    .section { padding:40px; max-width:950px; margin:auto; background:#fff; margin-top:25px; border-radius:12px; box-shadow:0px 5px 15px rgba(0,0,0,0.1);}
-    h2 { color:#0d47a1; margin-bottom:10px; }
-    h3 { margin-top:25px; color:#1b3a70; }
-    footer { margin-top:40px; background:#0d47a1; color:white; padding:20px; text-align:center; }
-    
-    .cta-box { margin-top:20px; padding:20px; background:#1565c0; color:white; border-radius:10px; text-align:center; }
-    .cta-btn { background:white; color:#0d47a1; padding:10px 22px; margin-top:10px; border:none; font-weight:bold; border-radius:8px; cursor:pointer; }
-    .cta-btn:hover { opacity:0.8; }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="D&D Data Dynamics" />
+  <meta name="twitter:description" content="End-to-end data engineering, cloud analytics, and AI-driven insights to boost business performance." />
+  <meta name="twitter:image" content="/assets/og-image.png" />
 
-    .contact-form { display:flex; flex-direction:column; gap:15px; margin-top:25px; }
-    input, textarea { padding:12px; border-radius:6px; border:1px solid #777; }
-    button { background:#0d47a1; color:white; padding:12px; font-weight:bold; border:none; border-radius:6px; cursor:pointer; }
-    button:hover { opacity:0.8; }
-  </style>
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
 
-  <script>
-    function showPage(id){
-      document.querySelectorAll('.section').forEach(sec => sec.style.display='none');
-      document.getElementById(id).style.display='block';
-    }
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "D&D Data Dynamics",
+    "url": "https://www.dnddatadynamics.com",
+    "logo": "https://www.dnddatadynamics.com/assets/logo.png",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+48-508-596-170",
+        "contactType": "customer service",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English"]
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/dnddatadynamics",
+      "https://twitter.com/dnddatadynamics"
+    ]
+  }
   </script>
 
+  <style>
+    :root{
+      /* brown + yellow palette */
+      --brand-900: #5d3a1a; /* deep brown */
+      --brand-700: #d4a017; /* warm gold / yellow */
+      --muted: #6b5b4a;
+      --card: #ffffff;
+      --bg: #fbf8f5;
+      --radius: 12px;
+      --nav-contrast: #fffaf0;
+    }
+    *{box-sizing:border-box;}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#2b241e;background:var(--bg);line-height:1.5}
+    header{background:linear-gradient(135deg,var(--brand-900),var(--brand-700));color:var(--nav-contrast);padding:32px 20px;position:sticky;top:0;z-index:20}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:40px;width:auto;border-radius:6px;background:#fff;padding:3px}
+    nav a{color:var(--nav-contrast);text-decoration:none;font-weight:600;margin-left:14px}
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;padding:48px 0;align-items:center}
+    .hero-inner{background:rgba(255,255,255,0.06);padding:28px;border-radius:14px}
+    .kicker{display:inline-block;background:rgba(255,250,240,0.12);padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px;color:#3b2f26}
+    h1{font-size:28px;margin:12px 0 10px;color:var(--nav-contrast);line-height:1.06}
+    p.lead{color:rgba(255,250,240,0.95);margin:0 0 18px;max-width:50ch}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--brand-700);color:#2b241e;padding:12px 18px;border-radius:10px;border:none;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,250,240,0.16);color:var(--nav-contrast)}
+    .hero-media{min-height:220px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(43,36,30,0.06);background:linear-gradient(180deg,rgba(255,250,240,0.02),transparent)}
+
+    /* Sections */
+    .section{padding:48px 0}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(43,36,30,0.06)}
+    .card h3{margin:0 0 10px;color:var(--brand-900)}
+    .muted{color:var(--muted)}
+
+    /* Case studies */
+    .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    .case{display:flex;gap:14px;align-items:flex-start}
+
+    /* Contact form */
+    .contact{display:flex;gap:24px;flex-wrap:wrap}
+    form{flex:1;min-width:280px}
+    input,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #e6d9c6;margin-top:10px;background:#fffaf5}
+    button[type="submit"]{background:var(--brand-900);color:#fff;padding:12px 16px;border-radius:8px;border:none;cursor:pointer}
+
+    footer{background:var(--brand-900);color:var(--nav-contrast);padding:28px 0;margin-top:30px}
+    footer .foot-grid{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    small{color:rgba(255,250,240,0.9)}
+
+    @media(min-width:880px){
+      .hero{grid-template-columns:1fr 520px}
+      h1{font-size:38px}
+    }
+    html{scroll-behavior:smooth}
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>D&D Data Dynamics</h1>
-  <p>Precision. Performance. Predictive Intelligence.</p>
+  <div class="container nav">
+    <div class="logo">
+      <img src="/assets/logo.png" alt="D&D Data Dynamics logo">
+      <div>
+        <div style="font-weight:800">D&amp;D Data Dynamics</div>
+        <div style="font-size:12px;color:rgba(255,250,240,0.9)">Insight • Innovation • Intelligence</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#ai-demo">AI Demo</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<nav>
-  <a href="#" onclick="showPage('home')">Home</a>
-  <a href="#" onclick="showPage('about')">About</a>
-  <a href="#" onclick="showPage('services')">Services</a>
-  <a href="#" onclick="showPage('portfolio')">Portfolio</a>
-  <a href="#" onclick="showPage('contact')">Contact</a>
-</nav>
+<main class="container" role="main">
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="kicker">Data & AI Solutions</span>
+      <h1>Transform raw data into impactful business insights</h1>
+      <p class="lead">We build robust data pipelines, cloud analytics platforms, and AI-driven models that empower organizations to make smarter decisions faster.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Get a Free Consultation</a>
+        <a class="btn secondary" href="#case-studies">Explore Projects</a>
+      </div>
 
-<!-- HOME -->
-<section class="section" id="home" style="display:block;">
-  <h2>Welcome to D&D Data Dynamics</h2>
-  <p>We transform complex data challenges into powerful results. From automated pipelines 
-  to real-time dashboards and AI systems—We build future-ready data solutions.</p>
+      <div style="margin-top:20px" class="grid">
+        <div class="card">
+          <h3>Data Engineering</h3>
+          <p class="muted">Scalable ETL/ELT pipelines, streaming workflows, and reliable data lakes.</p>
+        </div>
+        <div class="card">
+          <h3>Cloud Platforms</h3>
+          <p class="muted">AWS, GCP, Azure platforms built for performance, security, and cost efficiency.</p>
+        </div>
+        <div class="card">
+          <h3>AI & Analytics</h3>
+          <p class="muted">Predictive models, dashboards, and actionable insights for smarter business decisions.</p>
+        </div>
+      </div>
+    </div>
 
-  <div class="cta-box">
-    <h3>Need Data Solutions for Your Business?</h3>
-    <p>Let us automate, analyze, and accelerate your success.</p>
-    <button class="cta-btn" onclick="showPage('contact')">Get in Touch</button>
-  </div>
-</section>
+    <div class="hero-media" aria-hidden="true">
+      <!-- AI demo video placeholder: place an MP4 at /assets/ai-demo.mp4 and poster /assets/ai-demo-poster.png -->
+      <video controls autoplay muted playsinline style="width:100%;height:auto;max-height:420px;background:#000" poster="/assets/ai-demo-poster.png">
+        <source src="/assets/ai-demo.mp4" type="video/mp4">
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" rel="noopener">Watch the AI demo on YouTube</a>
+      </video>
+      <div style="position:absolute;bottom:14px;right:28px;color:#fff;font-weight:700;background:rgba(0,0,0,0.35);padding:6px 10px;border-radius:8px">D&amp;D Data Dynamics — AI Demo</div>
+    </div>
+  </section>
 
-<!-- ABOUT -->
-<section class="section" id="about" style="display:none;">
-  <h2>About Us</h2>
-  <p><strong>Founder:</strong> Deeksha Singh — Senior Data Engineer</p>
-  <p>Specializing in ETL pipelines, Airflow orchestration, cloud architecture, optimization, 
-  predictive models, and BI automation.</p>
+  <section id="case-studies" class="section">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+      <h2 style="margin:0;color:var(--brand-900)">Case Studies</h2>
+      <a href="#portfolio" style="color:var(--brand-700);font-weight:700;text-decoration:none">View More →</a>
+    </div>
+    <div class="case-grid">
+      <div class="card case">
+        <div style="width:80px;height:80px;border-radius:10px;background:linear-gradient(180deg,#fff6e6,#fff);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--brand-900)">AI</div>
+        <div>
+          <h3 style="margin:0 0 6px">Ad Optimization AI</h3>
+          <p class="muted" style="margin:0">Improved campaign efficiency and ROI using predictive ML pipelines and real-time analytics.</p>
+        </div>
+      </div>
+      <div class="card case">
+        <div style="width:80px;height:80px;border-radius:10px;background:linear-gradient(180deg,#fff7ed,#fff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#b45309">DF</div>
+        <div>
+          <h3 style="margin:0 0 6px">Demand Forecasting</h3>
+          <p class="muted" style="margin:0">Reduced stockouts and optimized inventory with automated forecasting pipelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h3>Why Businesses Choose Us</h3>
-  <ul>
-    <li>Fast & Scalable Infrastructure</li>
-    <li>Cost-Optimized Data Solutions</li>
-    <li>Professional Dashboards & AI Models</li>
-    <li>End-to-End Consulting and Support</li>
-  </ul>
-</section>
+  <section id="ai-demo" class="section">
+    <h2 style="color:var(--brand-900);margin-bottom:12px">AI Demo — D&amp;D Data Dynamics</h2>
+    <div class="grid">
+      <div class="card">
+        <p class="muted">Below is a short demo showcasing how we process streaming features, run inference, and surface results into dashboards. Replace the demo video with your recorded walkthrough (place file at /assets/ai-demo.mp4).</p>
+        <div style="margin-top:12px">
+          <video controls playsinline style="width:100%;height:auto;border-radius:10px" poster="/assets/ai-demo-poster.png">
+            <source src="/assets/ai-demo.mp4" type="video/mp4">
+            <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" rel="noopener">Watch the AI demo on YouTube</a>
+          </video>
+        </div>
+      </div>
 
-<!-- SERVICES -->
-<section class="section" id="services" style="display:none;">
-  <h2>Our Services</h2>
+      <div class="card">
+        <h3>What this demo shows</h3>
+        <ul class="muted">
+          <li>Feature pipeline and near-real-time ingestion</li>
+          <li>Model inference and automated retraining triggers</li>
+          <li>Real-time dashboard updates and anomaly detection</li>
+        </ul>
+        <p class="muted" style="margin-top:10px">If you want, I can help produce a short 60–90s demo script you can record that highlights these capabilities.</p>
+      </div>
+    </div>
+  </section>
 
-  <h3>1. Data Engineering & Pipelines</h3>
-  <p>Blueprint and deploy efficient ETL/ELT pipelines.</p>
+  <section id="services" class="section">
+    <h2 style="color:var(--brand-900)">Our Services</h2>
+    <div class="grid" style="margin-top:16px">
+      <div class="card">
+        <h3>ETL & Pipelines</h3>
+        <p class="muted">Reliable pipelines for batch and streaming data integration and transformation.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud Platforms</h3>
+        <p class="muted">Secure, scalable, and cost-optimized cloud solutions for modern businesses.</p>
+      </div>
+      <div class="card">
+        <h3>AI & Analytics</h3>
+        <p class="muted">Machine learning models, dashboards, and analytics tools for actionable insights.</p>
+      </div>
+    </div>
+  </section>
 
-  <h3>2. Cloud Architecture (AWS / GCP / Azure)</h3>
-  <p>Full cloud setup for scaling data workloads.</p>
+  <section id="about" class="section">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px">
+        <h2 style="color:var(--brand-900)">About D&amp;D Data Dynamics</h2>
+        <p class="muted">Founded by Deeksha Singh, D&amp;D Data Dynamics delivers end-to-end data engineering, cloud analytics, and AI solutions that drive measurable business results.</p>
+        <ul class="muted">
+          <li>ETL & workflow automation</li>
+          <li>Data warehouses & lakes (Snowflake, BigQuery, Redshift)</li>
+          <li>Analytics dashboards & reporting</li>
+        </ul>
+      </div>
 
-  <h3>3. Business Intelligence & Dashboards</h3>
-  <p>Power BI, Looker, Tableau — fully automated insights.</p>
+      <aside style="width:320px">
+        <div class="card">
+          <h3>Ready to elevate your data?</h3>
+          <p class="muted">Book a free consultation to explore your data strategy, architecture, and AI opportunities.</p>
+          <a class="btn" href="#contact">Book a Call</a>
+        </div>
+      </aside>
+    </div>
+  </section>
 
-  <h3>4. Machine Learning & Predictive AI</h3>
-  <p>Forecasting, anomaly detection, segmentation & automation.</p>
+  <section id="contact" class="section">
+    <h2 style="color:var(--brand-900)">Contact Us</h2>
+    <div class="contact" style="margin-top:14px">
+      <form action="https://formsubmit.co/your-email@example.com" method="POST" aria-label="Contact form">
+        <input type="hidden" name="_captcha" value="false" />
+        <input name="name" type="text" placeholder="Your name" required />
+        <input name="email" type="email" placeholder="Email" required />
+        <textarea name="message" rows="6" placeholder="Tell us about your project" required></textarea>
+        <button type="submit">Send message</button>
+      </form>
 
-  <h3>5. Outsourced Analytics Team</h3>
-  <p>We act as your entire data team for a fixed cost.</p>
-</section>
-
-<!-- PORTFOLIO -->
-<section class="section" id="portfolio" style="display:none;">
-  <h2>Portfolio Highlights</h2>
-
-  <h3>✔ AI Ad-Optimization Pipeline</h3>
-  <p>Reduced campaign cost and increased bid accuracy by 18%.</p>
-
-  <h3>✔ Retail Forecasting Platform</h3>
-  <p>Saved 20+ hours/week and reduced supply gaps by 22%.</p>
-
-  <h3>✔ Customer Segmentation Engine</h3>
-  <p>1.2M+ records processed for precision marketing.</p>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contact" style="display:none;">
-  <h2>Contact Us</h2>
-  <p>We would love to work with you!</p>
-
-  <form class="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
-      <button type="submit">Send Message</button>
-  </form>
-
-  <p><strong>Phone:</strong> +48 508 596 170</p>
-  <p><strong>Address:</strong> ul. 24 Lublańska Street, Kraków, Poland</p>
-  <p><strong>Email:</strong> info@dnddatadynamics.com</p>
-</section>
+      <div style="flex:1;min-width:260px">
+        <div class="card">
+          <h3>Contact Info</h3>
+          <p class="muted"><strong>Phone:</strong> +48 508 596 170</p>
+          <p class="muted"><strong>Address:</strong> ul. 24 Lublańska Street, Kraków, Poland</p>
+          <p class="muted"><strong>Email:</strong> info@dnddatadynamics.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <p>© 2025 D&D Data Dynamics — All Rights Reserved</p>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <strong>D&amp;D Data Dynamics</strong>
+        <div class="muted" style="margin-top:6px">© <span id="yr"></span> All rights reserved</div>
+      </div>
+      <div style="text-align:right">
+        <div class="muted">Follow us</div>
+        <div style="margin-top:8px">
+          <a href="#" style="color:var(--nav-contrast);margin-left:8px;text-decoration:none">LinkedIn</a>
+          <a href="#" style="color:var(--nav-contrast);margin-left:8px;text-decoration:none">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
